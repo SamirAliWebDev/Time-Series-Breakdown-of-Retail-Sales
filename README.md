@@ -36,6 +36,7 @@ monthly_sales['Month'] = monthly_sales['Month'].dt.to_timestamp()
 
 
 I also calculated the moving avg so that i can see the overtime sales in  one frame
+
 ```python
 # For Moving Average
 monthly_sales['Moving_Avg'] = monthly_sales['Weekly_Sales'].rolling(window=3, center=True).mean()
@@ -50,3 +51,23 @@ plt.ylabel('Total Sales')
 plt.tight_layout()
 plt.show()
 ```
+
+## Result:
+![Alt text](/results/monthly%20trends.png)
+
+### important thing to note:
+- The orange line indicates the moving avg line overtime
+- The blue line indicates the monthly sales overtime
+
+
+to Analyze the seasonal patterns i extract year and month with weekly sales and groupby the month, year.
+
+### Result:
+![Alt text](/results/Seasonality.png)
+
+- the year 2010 and 2011 have the highest sales
+- The 12th month ( December ) has the higest sales
+
+### Conclusion:
+
+We can say that the sales are increasing each month
